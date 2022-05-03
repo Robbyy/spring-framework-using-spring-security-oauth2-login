@@ -31,7 +31,7 @@ public class AuthenticationSuccessHandlerImpl implements AuthenticationSuccessHa
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
 			Authentication authentication) throws IOException, ServletException {
-		if(!this.portfolioQueryService.getPortfolioPositionsForUser(authentication.getName()).isPresent()) {
+		if(this.portfolioQueryService.getPortfolioPositionsForUser(authentication.getName()).isEmpty()) {
 			UserRegistrationRequest registrationRequest = new UserRegistrationRequest();
 			OidcUser oidcUser = (OidcUser)authentication.getPrincipal();
 			registrationRequest.setUsername(oidcUser.getSubject());
