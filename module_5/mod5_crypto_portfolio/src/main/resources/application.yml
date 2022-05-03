@@ -14,16 +14,15 @@ spring:
         registration:
           crypto-portfolio:
             client-id: crypto-portfolio
-            client-secret: c796d57b-e5a5-4337-bad8-3a48618f4332
-            client-name:  Crypto Potfolio
+            client-secret: 897d5325-603b-4f34-a6ac-88ef20ba7dd8
+            client-name:  Crypto Portfolio
             redirect-uri: http://localhost:8080/login/oauth2/code/crypto-portfolio
             authorization-grant-type: authorization_code
             scope: openid
             provider: keycloak
         provider:  
          keycloak:            
-            issuer-uri: http://localhost:8081/auth/realms/CryptoPortfolio            
-            
+            issuer-uri: http://localhost:8081/auth/realms/CryptoPortfolio
    
 logging:
   level:
